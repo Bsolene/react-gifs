@@ -1,10 +1,10 @@
 import React from 'react';
 import Gif from './gif';
 
-const GifList = (props) => {
+const GifList = ({ gifs, onGifClick } ) => {
   const renderList = () => {
-    return props.gifs.map((gif) => {
-        return <Gif key={gif.giphyId} giphyId={gif.giphyId} onGifClick={props.onGifClick}/>
+    return gifs.map(({ giphyId }) => {
+        return <Gif key={giphyId} giphyId={giphyId} onGifClick={onGifClick}/>
       })
   };
   return (
